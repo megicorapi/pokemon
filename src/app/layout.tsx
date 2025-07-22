@@ -1,9 +1,10 @@
-import { Metadata } from 'next';
 import * as React from 'react';
+import { Metadata } from 'next';
+
+import Navbar from '@/components/Navbar';
+import { siteConfig } from '@/constant/config';
 
 import '@/styles/globals.css';
-
-import { siteConfig } from '@/constant/config';
 
 export const metadata: Metadata = {
   title: {
@@ -35,7 +36,10 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
