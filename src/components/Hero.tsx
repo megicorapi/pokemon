@@ -1,6 +1,11 @@
+import SearchBar from '@/components/SearchBar';
 import React from 'react';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onSearch?: (query: string) => void;
+}
+
+const HeroSection = ({ onSearch }: HeroSectionProps) => {
   return (
     <section className='relative flex items-center justify-center overflow-hidden py-20 md:py-32'>
       <div
@@ -16,10 +21,11 @@ const HeroSection = () => {
         <h1 className='mb-6 text-4xl font-bold sm:text-5xl md:text-6xl'>
           <span className='text-yellow-400'>Gotta Catch</span> Em All!
         </h1>
-        <p className='mb-8 text-lg sm:text-xl md:text-2xl '>
+        <p className='mb-8 text-lg sm:text-xl md:text-2xl'>
           Pick your team, plan your battles, and show the world what you're made
           of.
         </p>
+        <SearchBar onSearch={onSearch} />
       </div>
     </section>
   );
