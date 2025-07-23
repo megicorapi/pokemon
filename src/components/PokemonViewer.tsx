@@ -26,7 +26,13 @@ export default function PokemonViewer({ pokemonList }: PokemonViewerProps) {
 
       const filteredList = pokemonList.filter((p) => {
         if (!searchText) return true;
-        return p.name.toLowerCase().includes(searchText.toLowerCase());
+
+        const nameMatch = p.name.toLowerCase().includes(searchText.toLowerCase());
+
+        const idFromUrl = Number(p.url.split('/').filter(Boolean).pop());
+        const idMatch = !isNaN(Number(searchText)) && idFromUrl === Number(searchText);
+
+        return nameMatch || idMatch;
       });
 
       const details = await Promise.all(
