@@ -1,6 +1,6 @@
 'use client';
 
-import { useTeam } from '@/app/context/TeamContext';
+import { useTeam } from '@/context/TeamContext';
 import Card from '@/components/Card';
 
 export default function TeamPage() {

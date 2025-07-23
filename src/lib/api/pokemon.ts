@@ -1,8 +1,4 @@
-import {
-  EvolutionChain,
-  Pokemon,
-  PokemonListResponse,
-} from '@/app/types/pokemon';
+import { EvolutionChain, Pokemon, PokemonListResponse } from '@/types/pokemon';
 
 const BASE_URL = 'https://pokeapi.co/api/v2';
 

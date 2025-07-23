@@ -1,6 +1,6 @@
 'use client';
 import { typeColors } from '@/constant/colors';
-import { Pokemon, EvolutionChain } from '@/app/types/pokemon';
+import { Pokemon, EvolutionChain } from '@/types/pokemon';
 import Image from 'next/image';
 
 interface PokemonDetailsCardProps {

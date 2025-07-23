@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useTeam } from '@/app/context/TeamContext';
-import { Pokemon } from '@/app/types/pokemon';
+import { useTeam } from '@/context/TeamContext';
+import { Pokemon } from '@/types/pokemon';
 
 interface CardProps {
   pokemon: Pokemon;
@@ -12,7 +12,8 @@ interface CardProps {
 const Card = ({ pokemon }: CardProps) => {
   const router = useRouter();
   const { id, name, sprites, types } = pokemon;
-  const image = sprites.other['official-artwork'].front_default || '/images/hero.jpg';
+  const image =
+    sprites.other['official-artwork'].front_default || '/images/hero.jpg';
   const type = types[0]?.type.name || 'Unknown';
 
   const { isInTeam, addToTeam, removeFromTeam } = useTeam();

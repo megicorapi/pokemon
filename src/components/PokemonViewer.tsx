@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Pokemon } from '@/app/types/pokemon';
+import { Pokemon } from '@/types/pokemon';
 import { fetchPokemonByName } from '@/lib/api/pokemon';
 import HeroSection from '@/components/Hero';
 import CardGrid from '@/components/CardGrid';

@@ -1,7 +1,7 @@
 'use client';
 
 import Card from '@/components/Card';
-import { Pokemon } from '@/app/types/pokemon';
+import { Pokemon } from '@/types/pokemon';
 
 interface CardGridProps {
   pokemons: Pokemon[];

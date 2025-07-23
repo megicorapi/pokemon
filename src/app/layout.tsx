@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import { siteConfig } from '@/constant/config';
 
 import '@/styles/globals.css';
-import { TeamProvider } from '@/app/context/TeamContext';
+import { TeamProvider } from '@/context/TeamContext';
 
 export const metadata: Metadata = {
   title: {

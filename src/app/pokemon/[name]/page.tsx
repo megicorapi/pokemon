@@ -3,7 +3,7 @@ import {
   fetchPokemonSpeciesByNameOrId,
   fetchEvolutionChain,
 } from '@/lib/api/pokemon';
-import { Pokemon } from '@/app/types/pokemon';
+import { Pokemon } from '@/types/pokemon';
 import PokemonDetailsCard from '@/components/DetailsCard';
 
 interface PokemonDetailsPageProps {
