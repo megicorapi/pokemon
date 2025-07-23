@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { useTeam } from '@/app/context/TeamContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const teamCount = 4; //temporary
+  const { team } = useTeam();
+  const teamCount = team.length;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -92,12 +94,14 @@ const Navbar = () => {
         <div className='space-y-1 border-t border-blue-300 bg-blue-300 px-2 pb-3 pt-2'>
           <Link
             href='/'
+            onClick={() => setIsMenuOpen(false)}
             className='block rounded-md px-3 py-2 text-base font-medium text-white transition-colors hover:bg-blue-500'
           >
             Home
           </Link>
           <Link
             href='/team'
+            onClick={() => setIsMenuOpen(false)}
             className='relative block rounded-md px-3 py-2 text-base font-medium text-white transition-colors hover:bg-blue-500'
           >
             <div className='flex items-center justify-between'>
