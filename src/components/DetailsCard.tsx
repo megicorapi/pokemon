@@ -1,5 +1,5 @@
 'use client';
-import { typeColors } from '@/app/types/colors';
+import { typeColors } from '@/constant/colors';
 import { Pokemon } from '@/app/types/pokemon';
 import Image from 'next/image';
 
