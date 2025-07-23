@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import { siteConfig } from '@/constant/config';
 
 import '@/styles/globals.css';
+import { TeamProvider } from '@/app/context/TeamContext';
 
 export const metadata: Metadata = {
   title: {
@@ -37,8 +38,10 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <Navbar />
-        {children}
+        <TeamProvider>
+          <Navbar />
+          {children}
+        </TeamProvider>
       </body>
     </html>
   );
