@@ -1,12 +1,15 @@
-import HeroSection from '@/components/Hero';
+import { fetchPokemonList, fetchPokemonByName } from '@/lib/api/pokemon';
+import PokemonViewer from '@/components/PokemonViewer';
 
-export default function HomePage() {
+export default async function HomePage() {
+  const list = await fetchPokemonList();
+  const detailed = await Promise.all(
+    list.results.map((p) => fetchPokemonByName(p.name))
+  );
+
   return (
     <main className='relative min-h-screen'>
-      <HeroSection />
-      <footer className='absolute bottom-2 w-full text-center text-gray-700'>
-        © {new Date().getFullYear()} By Megi Corapi
-      </footer>
+      <PokemonViewer allPokemons={detailed} />
     </main>
   );
 }
