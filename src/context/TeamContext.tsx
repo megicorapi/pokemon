@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { Pokemon } from '@/types/pokemon';
 
 interface TeamContextType {
@@ -11,9 +11,29 @@ interface TeamContextType {
 }
 
 const TeamContext = createContext<TeamContextType | null>(null);
+const LOCAL_STORAGE_KEY = 'pokemon-team';
 
 export const TeamProvider = ({ children }: { children: ReactNode }) => {
   const [team, setTeam] = useState<Pokemon[]>([]);
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  useEffect(() => {
+    const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (stored) {
+      try {
+        setTeam(JSON.parse(stored));
+      } catch (e) {
+        console.error('Failed to parse saved team:', e);
+      }
+    }
+    setIsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (isHydrated) {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(team));
+    }
+  }, [team, isHydrated]);
 
   const addToTeam = (pokemon: Pokemon) => {
     setTeam((prev) =>
