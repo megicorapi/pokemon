@@ -39,3 +39,10 @@ export async function fetchEvolutionChain(id: number): Promise<EvolutionChain> {
     );
   return res.json();
 }
+
+export async function fetchPokemonSpeciesByNameOrId(nameOrId: string | number) {
+  const res = await fetch(`${BASE_URL}/pokemon-species/${nameOrId}`);
+  if (!res.ok)
+    throw new Error("Oops! Couldn't fetch the Pokémon species data.");
+  return res.json();
+}
