@@ -1,6 +1,6 @@
 # **Pokémon Trainer App**
 
-A sleek **Next.js** + **TypeScript** + **Tailwind CSS** app that lets users **search and explore Pokémon** using the [PokeAPI](https://pokeapi.co/).
+A **Next.js** + **TypeScript** + **Tailwind CSS** app that lets users **search and explore Pokémon** using the [PokeAPI](https://pokeapi.co/).
 
 ---
 
