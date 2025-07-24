@@ -18,7 +18,7 @@ interface PokemonViewerProps {
 export default function PokemonViewer({ pokemonList }: PokemonViewerProps) {
   const [allPokemons, setAllPokemons] = useState<Pokemon[]>([]);
   const [searchText, setSearchText] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchInitialDetails() {
